@@ -65,7 +65,6 @@ export default function SplitHeader({ src, children }: { src: string; children?:
                 onUpdate: (self) => {
                     // Smooth transition to color as we scroll
                     const progress = gsap.utils.mapRange(0, 0.2, 0, 100, self.progress);
-                    console.log(progress);
                     imageRefs.current.forEach(img => {
                         if (img) {
                             const grayscale = 100 - (progress * 100);
@@ -114,9 +113,6 @@ export default function SplitHeader({ src, children }: { src: string; children?:
                         ))}
                     </div>
                 </section>
-                <div className="h-[100vh]">
-                    {/* Keeps next sections visible when scrolling */}
-                </div>
                 {children}
             </div>
 
